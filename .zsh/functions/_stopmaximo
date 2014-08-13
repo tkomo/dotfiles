@@ -1,0 +1,6 @@
+#compdef stopmaximo
+
+_stopmaximo(){
+  _arguments \
+    "-a[Stop All Middleware to stop Maximo]" \
+}

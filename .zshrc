@@ -127,8 +127,8 @@ alias vi='vim'
 #=============================
 # source auto-fu.zsh
 #=============================
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-source ~/.zsh/auto-fu.zsh
+if [ -f ~/dotfiles/.zsh/auto-fu.zsh ]; then
+source ~/dotfiles/.zsh/auto-fu.zsh
 function zle-line-init () {
 auto-fu-init
 }

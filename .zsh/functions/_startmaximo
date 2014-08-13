@@ -1,0 +1,7 @@
+#compdef startmaximo
+
+_startmaximo(){
+  _arguments \
+    "-a[Start All Middleware to start Maximo]" \
+}
+
