@@ -2,7 +2,8 @@
 # Env
 # ================================================================
 export LANG=ja_JP.UTF-8
-fpath=($HOME/.zsh/functions $fpath)
+fpath=($HOME/dotfiles/.zsh/functions $fpath)
+
 # History
 # ================================================================
 HISTFILE=$HOME/.zsh-history
