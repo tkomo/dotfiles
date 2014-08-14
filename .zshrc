@@ -17,11 +17,11 @@ setopt share_history
 
 # 補完機能
 # ================================================================
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' verbose yes
+#zstyle ':completion:*:descriptions' format '%B%d%b'
+#zstyle ':completion:*:messages' format '%d'
+#zstyle ':completion:*:warnings' format 'No matches for: %d'
+#zstyle ':completion:*' group-name ''
 autoload -U compinit
 compinit
 
