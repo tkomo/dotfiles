@@ -94,7 +94,7 @@ setopt share_history        # share command history data
 
 ## Completion configuration
 #
-fpath=(${HOME}/.zsh/functions/Completion ${fpath})
+fpath=(${HOME}/dotfiles/.zsh/functions/completions ${fpath})
 autoload -U compinit
 compinit
 
@@ -188,13 +188,3 @@ esac
 #
 # Function
 # ================================================================
-#source auto-fu.zsh
-#=============================
-if [ -f ~/dotfiles/.zsh/auto-fu.zsh ]; then
-    source ~/dotfiles/.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':auto-fu:var' disable magic-space
-fi
