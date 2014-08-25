@@ -6,7 +6,7 @@
 #
 export LANG=ja_JP.UTF-8
 
-
+eval "$(rbenv init -)"
 
 ## Default shell configuration
 #
