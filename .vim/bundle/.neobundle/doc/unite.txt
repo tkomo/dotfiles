@@ -1857,6 +1857,7 @@ the context dictionary.
 		Change 'updatetime' option.  If this option is omitted,
 		"200" is used.  This option is useful for
 		animation source.
+		Note: It must be smaller than 'updatetime' value.
 
 					*unite-options-cursor-line-highlight*
 		-cursor-line-highlight={highlight-name}
@@ -1963,6 +1964,12 @@ the context dictionary.
 		If you scroll cursor quickly less than it, unite will skip
 		cursor line highlight.
 		If it is "0.0", this feature will be disabled.
+
+						*unite-options-wipe*
+		-wipe
+		Wipeout unite buffer when quit.
+		It is useful for using jumplist.
+		Note: If it is used, you cannot use |:UniteResume| feature.
 
 ==============================================================================
 SOURCES						*unite-sources*
@@ -2674,7 +2681,6 @@ Defines an interface for files that can be opened.  It requires an inheriting
 kind to define "open" action.
 	tabopen		Open the file in a new tab.
 	choose		Open the file in a selected window.
-	tabdrop		Open the file by the ":tab drop" command.
 	split		Open the file, splitting horizontally.
 	vsplit		Open the file, splitting vertically.
 	left		Open the file in the left, splitting vertically.
@@ -2684,6 +2690,14 @@ kind to define "open" action.
 	persist_open	Open the file in alternate window.  unite window
 			isn't closed.
 	tabsplit	Open the files and vsplit in a new tab.
+	switch		Open the file in current window or jump to existing
+			window/tabpage.
+	tabswitch	Open the file in new tab or jump to existing
+			window/tabpage.
+	splitswitch	Open the file in split window or jump to existing
+			window/tabpage.
+	vsplitswitch	Open the file in vertical split window or jump to
+			existing window/tabpage.
 
 cdable						*unite-action-cdable*
 Defines an interface for files you can move to with cd command.
@@ -3556,22 +3570,16 @@ A: >
 	endfunction
 <
 Q: Unite adds unite buffer to jumplist automatically.
-
-A: Sorry, but it is hard to fix. You should use |unite-source-jump| instead of
-<C-i>/<C-o> mappings. It ignores unite buffer.
-
-Note: In this issue, experimental settings are suggested.
 https://github.com/Shougo/unite.vim/issues/278
-However, I don't reccomend them because:
-1. Unite buffer name may be changed in a later version.
-2. You cannot use the |:UniteResume| feature.
-3. It has side effects. I cannot guarantee it works.
+
+A: You can use |unite-options-wipe| option.  But it is used, you cannot use
+the |:UniteResume| feature.
 
 Q: unite.vim is too slow.
 
 A: Use Vim 7.3.885 or above with |if_lua| feature; unite.vim gets faster.
 
-Q: Support for existing vim settings like Commant-T plugin? Example,
+Q: Support for existing vim settings like Command-T plugin? Example,
 'wildignore', 'grepprg', 'suffixes'...
 
 A: No. Because it is hard to implement and it may conflict with current unite

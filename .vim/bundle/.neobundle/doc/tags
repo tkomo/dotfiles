@@ -490,6 +490,7 @@ unite-options-verbose	unite.txt	/*unite-options-verbose*
 unite-options-vertical	unite.txt	/*unite-options-vertical*
 unite-options-winheight	unite.txt	/*unite-options-winheight*
 unite-options-winwidth	unite.txt	/*unite-options-winwidth*
+unite-options-wipe	unite.txt	/*unite-options-wipe*
 unite-options-wrap	unite.txt	/*unite-options-wrap*
 unite-source-alias	unite.txt	/*unite-source-alias*
 unite-source-arg-!	unite.txt	/*unite-source-arg-!*
