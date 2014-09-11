@@ -2,10 +2,8 @@
 
 ## Environment variable configuration
 #
-# LANG
-#
 export LANG=ja_JP.UTF-8
-
+unset SSH_ASKPASS
 eval "$(rbenv init -)"
 
 ## Default shell configuration
