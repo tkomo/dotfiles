@@ -46,6 +46,7 @@ call neobundle#end()
 filetype plugin indent on
 filetype indent on
 syntax on
+set number
 " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
 NeoBundleCheck
