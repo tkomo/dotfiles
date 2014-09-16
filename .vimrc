@@ -20,6 +20,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-endwise'
 " unite for rails
 NeoBundle 'basyura/unite-rails'
+NeoBundle 'tpope/vim-rails'
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
