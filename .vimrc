@@ -51,6 +51,14 @@ filetype plugin indent on
 filetype indent on
 syntax on
 set number
+" タブを表示するときの幅
+set tabstop=4
+" タブを挿入するときの幅
+set shiftwidth=4
+" タブをタブとして扱う(スペースに展開しない)
+set noexpandtab 
+set softtabstop=0
+
 " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
 NeoBundleCheck
