@@ -1,3 +1,5 @@
 neobundle.vim
 neomru.vim
+unite-rails
 unite.vim
+vim-endwise

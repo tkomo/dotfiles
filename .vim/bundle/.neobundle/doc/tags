@@ -488,6 +488,7 @@ unite-options-winheight	unite.txt	/*unite-options-winheight*
 unite-options-winwidth	unite.txt	/*unite-options-winwidth*
 unite-options-wipe	unite.txt	/*unite-options-wipe*
 unite-options-wrap	unite.txt	/*unite-options-wrap*
+unite-rails	unite-rails.txt	/*unite-rails*
 unite-source-alias	unite.txt	/*unite-source-alias*
 unite-source-arg-!	unite.txt	/*unite-source-arg-!*
 unite-source-attribute-action_table	unite.txt	/*unite-source-attribute-action_table*

@@ -16,10 +16,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
+" if-end, def-end などを補完
+NeoBundle 'tpope/vim-endwise'
+" unite for rails
+NeoBundle 'basyura/unite-rails'
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
-"Unit.vimの設定
+"Unite.vimの設定
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
 let g:unite_enable_start_insert=1

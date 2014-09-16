@@ -3,8 +3,20 @@
 ## Environment variable configuration
 #
 export LANG=ja_JP.UTF-8
-unset SSH_ASKPASS
+
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+        ;;
+    linux*)
+        #ここにLinux向けの設定
+	unset SSH_ASKPASS
+	export PATH="$HOME/.rbenv/bin:$PATH"
+        ;;
+esac
+
 eval "$(rbenv init -)"
+
 
 ## Default shell configuration
 #
