@@ -12,6 +12,7 @@ case ${OSTYPE} in
         #ここにLinux向けの設定
 	unset SSH_ASKPASS
 	export PATH="$HOME/.rbenv/bin:$PATH"
+	export PATH="/usr/local/heroku/bin:$PATH"
         ;;
 esac
 
