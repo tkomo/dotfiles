@@ -2,6 +2,7 @@
 set nocompatible
 filetype plugin indent off
 
+
 if has('vim_starting')
   set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
   call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
@@ -26,6 +27,9 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+" Color Scheme (Solarized)
+NeoBundle 'altercation/vim-colors-solarized'
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
@@ -55,7 +59,6 @@ call neobundle#end()
 
 filetype plugin indent on
 filetype indent on
-syntax on
 set number
 " タブを表示するときの幅
 set tabstop=4
@@ -67,5 +70,12 @@ set softtabstop=0
 
 " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
+
+" Solarized
+let g:solarized_termtrans=1
+syntax enable
+set background=dark
+colorscheme solarized
+
 NeoBundleCheck
 """""""""""""""""""""""""""""""
