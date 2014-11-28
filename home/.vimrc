@@ -22,6 +22,11 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'tpope/vim-rails'
 
+" Code Snippets
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
 "Unite.vimの設定
