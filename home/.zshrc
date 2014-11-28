@@ -14,11 +14,14 @@ case ${OSTYPE} in
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	export PATH="/usr/local/heroku/bin:$PATH"
 	export PATH="/usr/local/go/bin:$PATH"
+	export PATH="/usr/local/hub/bin:$PATH"
         ;;
 esac
 
 eval "$(rbenv init -)"
 
+#$PATHの重複排除
+typeset -U path PATH
 
 ## Default shell configuration
 #
