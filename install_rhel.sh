@@ -13,3 +13,5 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 
 rbenv install -v 2.1.2
 rbenv rehash
+rbenv global 2.1.2
+rbenv rehash

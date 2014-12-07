@@ -5,7 +5,6 @@ filetype plugin indent off
 
 if has('vim_starting')
   set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
 endif
 
 call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
