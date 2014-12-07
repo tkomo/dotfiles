@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 # yum
-yum -y install gcc openssl-devel
+sudo yum -y install gcc openssl-devel
 
 # chsh
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 
 # rbenv, ruby, rails
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
