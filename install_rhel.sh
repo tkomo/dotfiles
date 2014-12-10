@@ -15,3 +15,10 @@ rbenv install -v 2.1.2
 rbenv rehash
 rbenv global 2.1.2
 rbenv rehash
+
+# chef-solo
+curl -L http://www.opscode.com/chef/install.sh | sudo bash
+
+# knife-solo
+gem install knife-solo
+

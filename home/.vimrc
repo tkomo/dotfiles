@@ -66,6 +66,8 @@ set shiftwidth=4
 " タブをタブとして扱う(スペースに展開しない)
 set noexpandtab 
 set softtabstop=0
+" バックスペースを使えるようにする
+set backspace=indent,eol,start
 
 " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
