@@ -18,7 +18,9 @@ case ${OSTYPE} in
         ;;
 esac
 
-eval "$(rbenv init -)"
+if [ -d "$HOME/.rbenv/bin" ]; then
+	eval "$(rbenv init -)"
+fi
 
 #$PATHの重複排除
 typeset -U path PATH
