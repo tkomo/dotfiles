@@ -30,6 +30,9 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " Color Scheme (Solarized)
 NeoBundle 'altercation/vim-colors-solarized'
 
+" Use vim plugin in sudo
+NeoBundle 'sudo.vim'
+
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
 "Unite.vimの設定
