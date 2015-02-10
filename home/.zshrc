@@ -157,7 +157,9 @@ alias df="df -h"
 
 alias su="su -l"
 
-alias vi="vim"
+if type vim > /dev/null 2>&1; then
+	alias vi="vim"
+fi
 
 ## terminal configuration
 #
