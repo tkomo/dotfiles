@@ -1,6 +1,9 @@
 #!/bin/sh
 
-sudo chsh -s /bin/zsh
+sudo chsh -s /bin/zsh `whoami`
+
+git submodule init
+git submodule update
 
 ln -sf ~/dotfiles/home/.vimrc ~/.vimrc
 #ln -sF ~/dotfiles/colors ~/.vim/colors
