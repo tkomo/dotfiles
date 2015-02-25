@@ -1,4 +1,7 @@
 #!/bin/sh
+
+sudo chsh -s /bin/zsh
+
 ln -sf ~/dotfiles/home/.vimrc ~/.vimrc
 #ln -sF ~/dotfiles/colors ~/.vim/colors
 #ln -sF ~/dotfiles/ftdetect ~/.vim/ftdetect
