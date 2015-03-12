@@ -42,10 +42,11 @@ case ${UID} in
   RPROMPT="%{${fg[red]}%}[%/]%{${reset_color}%}"
   ;;
 *)
-  PROMPT="%{${fg[white]}%}[%n@%m] %{${fg[white]}%}$%{${reset_color}%} "
-  PROMPT2="%B%{${fg[white]}%}%_$%{${reset_color}%}%b "
-  SPROMPT="%B%{${fg[white]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-  RPROMPT="%{${fg[white]}%}[%/]%{${reset_color}%}"
+#  PROMPT="%{${fg[white]}%}[%n@%m] %{${fg[white]}%}$%{${reset_color}%} "
+  PROMPT="%{${}%}[%n@%m] %{${}%}$%{${reset_color}%} "
+  PROMPT2="%B%{${}%}%_$%{${reset_color}%}%b "
+  SPROMPT="%B%{${}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
+  RPROMPT="%{${}%}[%/]%{${reset_color}%}"
   ;;
 esac
 
