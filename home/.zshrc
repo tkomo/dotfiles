@@ -7,6 +7,7 @@ export LANG=ja_JP.UTF-8
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
+		export PATH="/usr/local/share/npm/bin:$PATH"
         ;;
     linux*)
         #ここにLinux向けの設定
