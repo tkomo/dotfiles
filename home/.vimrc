@@ -33,6 +33,9 @@ NeoBundle 'altercation/vim-colors-solarized'
 " Use vim plugin in sudo
 NeoBundle 'sudo.vim'
 
+" Slim Syntax
+NeoBundle "slim-template/vim-slim"
+
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
 "Unite.vimの設定
@@ -63,9 +66,9 @@ filetype plugin indent on
 filetype indent on
 set number
 " タブを表示するときの幅
-set tabstop=4
+set tabstop=2
 " タブを挿入するときの幅
-set shiftwidth=4
+set shiftwidth=2
 " タブをタブとして扱う(スペースに展開しない)
 set noexpandtab 
 set softtabstop=0
