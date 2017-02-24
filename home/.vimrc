@@ -19,16 +19,18 @@ NeoBundle 'Shougo/neomru.vim'
 " if-end, def-end などを補完
 NeoBundle 'tpope/vim-endwise'
 " unite for rails
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'tpope/vim-rails'
+" NeoBundle 'basyura/unite-rails'
+" NeoBundle 'tpope/vim-rails'
 
 " Code Snippets
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
-" Color Scheme (Solarized)
-NeoBundle 'altercation/vim-colors-solarized'
+" Color Scheme
+NeoBundle 'w0ng/vim-hybrid'
+
+NeoBundle 'itchyny/lightline.vim'
 
 " Use vim plugin in sudo
 NeoBundle 'sudo.vim'
@@ -74,15 +76,95 @@ set noexpandtab
 set softtabstop=0
 " バックスペースを使えるようにする
 set backspace=indent,eol,start
+" エンコーディング設定
+set encoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+
+
+" hybrid
+let g:hybrid_custom_term_colors = 1
+syntax enable
+set background=dark
+colorscheme hybrid
+
+" 行番号のハイライト
+hi LineNr ctermbg=None ctermfg=15
+hi CursorLineNr ctermbg=None ctermfg=11
+set cursorline
+hi clear CursorLine
+
+" スペルチェックのハイライト
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+" 検索結果のハイライト
+hi Search ctermbg=3 ctermfg=0
+
+" lightline
+
+set laststatus=2
+
+
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
-
-" Solarized
-let g:solarized_termtrans=1
-syntax enable
-set background=dark
-colorscheme solarized
-
 NeoBundleCheck
 """""""""""""""""""""""""""""""
