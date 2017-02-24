@@ -22,8 +22,20 @@ case ${OSTYPE} in
         ;;
 esac
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+
 if [ -d "$HOME/.rbenv/bin" ]; then
 	eval "$(rbenv init -)"
+fi
+
+if [ -d "$HOME/.pyenv/bin" ]; then
+	eval "$(pyenv init -)"
+fi
+
+if [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv" ]; then
+	eval "$(pyenv virtualenv-init -)"
 fi
 
 if [ -d "$HOME/.zplug" ]; then
