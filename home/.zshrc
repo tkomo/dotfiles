@@ -26,6 +26,13 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 	eval "$(rbenv init -)"
 fi
 
+if [ -d "$HOME/.zplug" ]; then
+	source $HOME/.zplug/init.zsh
+fi
+
+
+
+
 #$PATHの重複排除
 typeset -U path PATH
 
@@ -53,11 +60,11 @@ esac
 
 # auto change directory
 #
-setopt auto_cd
+# setopt auto_cd
 
 # auto directory pushd that you can get dirs list by cd -[tab]
 #
-setopt auto_pushd
+# setopt auto_pushd
 
 # command correct edition before each completion attempt
 #
@@ -173,14 +180,17 @@ esac
 
 case "${TERM}" in
 xterm|xterm-color)
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    # export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+	  #eval $(dircolors ${HOME}/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+	  #export LSCOLORS=exfxcxdxbxegedabagacad
+    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+		if [ -n "${LS_COLORS}" ]; then
+		  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+		fi
     ;;
 kterm-color)
     stty erase '^H'
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    # export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+    #export LSCOLORS=exfxcxdxbxegedabagacad
+    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
     zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
     ;;
 kterm)
@@ -213,3 +223,20 @@ esac
 #
 # Function
 # ================================================================
+
+#
+# Plugins
+# ================================================================
+zplug "zplug/zplug"
+zplug "b4b4r07/enhancd", use:enhancd.sh
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+if ! zplug check --verbose; then
+	printf "Install> [y/N]: "
+	if read -q; then
+    echo; zplug install
+	fi
+fi
+
+zplug load --verbose
