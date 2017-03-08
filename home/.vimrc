@@ -79,7 +79,9 @@ set backspace=indent,eol,start
 " エンコーディング設定
 set encoding=utf-8
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
-
+" マウスを有効化
+set mouse=a
+set ttymouse=xterm2
 
 " hybrid
 let g:hybrid_custom_term_colors = 1
