@@ -8,6 +8,7 @@ case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
 		export PATH="/usr/local/share/npm/bin:$PATH"
+		export PATH="${HOME}/.bin:$PATH"
         ;;
     linux*)
         #ここにLinux向けの設定
