@@ -6,12 +6,13 @@ export LANG=ja_JP.UTF-8
 
 case ${OSTYPE} in
     darwin*)
-        #ここにMac向けの設定
+    #ここにMac向けの設定
 		export PATH="/usr/local/share/npm/bin:$PATH"
 		export PATH="${HOME}/.bin:$PATH"
+		test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
         ;;
     linux*)
-        #ここにLinux向けの設定
+    #ここにLinux向けの設定
 		unset SSH_ASKPASS
 		export PATH="$HOME/.rbenv/bin:$PATH"
 		export PATH="/usr/local/heroku/bin:$PATH"
@@ -253,3 +254,4 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
