@@ -4,6 +4,7 @@ chsh -s /bin/zsh `whoami`
 
 git submodule init
 git submodule update
+curl -sL zplug.sh/installer | zsh
 
 cd home
 
