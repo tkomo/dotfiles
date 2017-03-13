@@ -3,7 +3,7 @@
 ## Environment variable configuration
 #
 export LANG=ja_JP.UTF-8
-export TERM='xterm- 256color'
+export TERM='xterm-256color'
 case ${OSTYPE} in
     darwin*)
     #ここにMac向けの設定
