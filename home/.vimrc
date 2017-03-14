@@ -1,42 +1,52 @@
-" For NeoBundle
-set nocompatible
-filetype plugin indent off
-
-
-if has('vim_starting')
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+" Required:
+set runtimepath+=/Users/tkomo/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Required:
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
 
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
-" if-end, def-end などを補完
-NeoBundle 'tpope/vim-endwise'
-" unite for rails
-" NeoBundle 'basyura/unite-rails'
-" NeoBundle 'tpope/vim-rails'
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
-" Code Snippets
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('Shougo/neocomplete')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('w0ng/vim-hybrid')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('sudo.vim')
 
-" Color Scheme
-NeoBundle 'w0ng/vim-hybrid'
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-NeoBundle 'itchyny/lightline.vim'
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Use vim plugin in sudo
-NeoBundle 'sudo.vim'
+" Required:
+filetype plugin indent on
+syntax enable
 
-" Slim Syntax
-NeoBundle "slim-template/vim-slim"
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+
+
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
@@ -62,7 +72,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 """"""""""""""""""""""""""""""
-call neobundle#end()
 
 filetype plugin indent on
 filetype indent on
@@ -169,7 +178,3 @@ function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" If there are uninstalled bundles found on startup,
-" " this will conveniently prompt you to install them.
-NeoBundleCheck
-"""""""""""""""""""""""""""""""
