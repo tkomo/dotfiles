@@ -92,6 +92,10 @@ set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set mouse=a
 set ttymouse=xterm2
 
+" Clipboard integration
+set clipboard+=unnamed
+
+
 " hybrid
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_use_iTerm_colors = 1
