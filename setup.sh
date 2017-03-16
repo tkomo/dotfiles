@@ -2,9 +2,10 @@
 
 chsh -s /bin/zsh `whoami`
 
-git submodule init
-git submodule update
 curl -sL zplug.sh/installer | zsh
+
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ./installer.sh
+sh ./installer.sh ~/.vim/dein.vim
 
 cd home
 
