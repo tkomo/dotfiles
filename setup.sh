@@ -5,7 +5,7 @@ chsh -s /bin/zsh `whoami`
 curl -sL zplug.sh/installer | zsh
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ./installer.sh
-sh ./installer.sh ~/.vim/dein.vim
+sh ./installer.sh ~/.vim/dein
 
 cd home
 
