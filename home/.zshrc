@@ -165,6 +165,7 @@ alias j="jobs -l"
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
+		alias vim="/usr/local/bin/vim"
     ;;
 linux*)
     alias ls="ls --color"
@@ -174,6 +175,7 @@ esac
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
+alias ltr="ls -ltr"
 
 alias du="du -h"
 alias df="df -h"
