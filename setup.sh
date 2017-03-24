@@ -7,6 +7,9 @@ curl -sL zplug.sh/installer | zsh
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ./installer.sh
 sh ./installer.sh ~/.vim/dein
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 cd home
 
 for f in .??*
