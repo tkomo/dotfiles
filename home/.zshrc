@@ -9,6 +9,7 @@ case ${OSTYPE} in
     #ここにMac向けの設定
 		export PATH="/usr/local/share/npm/bin:$PATH"
 		export PATH="${HOME}/.bin:$PATH"
+		export PATH=$HOME/.nodebrew/current/bin:$PATH
 		test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
         ;;
     linux*)
@@ -32,7 +33,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 	eval "$(rbenv init -)"
 fi
 
-if [ -d "$HOME/.pyenv/bin" ]; then
+if [ -d "$HOME/.pyenv" ]; then
 	eval "$(pyenv init -)"
 fi
 
@@ -186,6 +187,8 @@ if type vim > /dev/null 2>&1; then
 	alias vi="vim"
 fi
 
+alias grep="grep -n --color=auto"
+
 ## terminal configuration
 #
 case "${TERM}" in
@@ -257,3 +260,6 @@ fi
 
 zplug load --verbose
 
+
+### Added by IBM Cloud CLI
+source /usr/local/Bluemix/bx/zsh_autocomplete
