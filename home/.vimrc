@@ -24,7 +24,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('itchyny/lightline.vim')
   call dein#add('slim-template/vim-slim')
-  call dein#add('sudo.vim')
+  "call dein#add('sudo.vim')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

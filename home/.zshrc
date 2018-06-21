@@ -166,7 +166,7 @@ alias j="jobs -l"
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
-		alias vim="/usr/local/bin/vim"
+		alias vim="/usr/bin/vim"
     ;;
 linux*)
     alias ls="ls --color"
